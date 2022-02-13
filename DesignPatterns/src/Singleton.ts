@@ -30,13 +30,13 @@ class Database {
    * we will write getConnection instead of getInstance, because this method will
    * either create a new connection if not created otherwise return the created one.
    */
-  public static getConnection(type: string = "pssql"): Database {
-    if (!Database.connection) {
-      Database.connection = new Database(type);
-    }
+  // public static getConnection(type = "pssql"): Database {
+  //   if (!Database.connection) {
+  //     Database.connection = new Database(type);
+  //   }
 
-    return Database.connection;
-  }
+  //   return Database.connection;
+  // }
 
   /**
    * Finally, any singleton should define some business logic, which can be
@@ -50,15 +50,15 @@ class Database {
 /**
  * The client code.
  */
-function clientCode() {
-  const dbInstance = Database.getConnection();
-  const dbInstance2nd = Database.getConnection("mysql");
+// function clientCode() {
+//   const dbInstance = Database.getConnection();
+//   const dbInstance2nd = Database.getConnection("mysql");
 
-  if (dbInstance.getType() === dbInstance2nd.getType()) {
-    console.log("Singleton works, both variables contain the same instance.");
-  } else {
-    console.log("Singleton failed, variables contain different instances.");
-  }
-}
+//   if (dbInstance.getType() === dbInstance2nd.getType()) {
+//     console.log("Singleton works, both variables contain the same instance.");
+//   } else {
+//     console.log("Singleton failed, variables contain different instances.");
+//   }
+// }
 
-clientCode();
+// clientCode();
